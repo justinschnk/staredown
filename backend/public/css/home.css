@@ -1,0 +1,16 @@
+.header {
+    font-family: 'Kaushan Script', cursive;
+}
+
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    background-image:url('/img/background.png');
+    background-repeat:repeat;
+}
+
+.login {
+    text-align: center;
+}
