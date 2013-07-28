@@ -206,9 +206,9 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
     boolean blinkedcalled = false;
 
-    private Toast toast;
-
     private int RGB_MASK = 0x00ffffff;
+
+    Toast toast;
 
     public boolean eyesFound(Bitmap b2) {
 
@@ -227,7 +227,13 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
         if(f == null) {
             Log.d(LOGTAG, "no face found");
-            return false;
+
+            if(toast != null) {
+                toast.cancel();
+            }
+            toast = Toast.makeText(getApplicationContext(), "No face found", Toast.LENGTH_SHORT);
+
+            return true;
         }
 
         PointF midPoint = new PointF();
