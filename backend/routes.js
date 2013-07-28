@@ -17,6 +17,13 @@ exports.home = function(req, res) {
 
 exports.queue = function(req, res){
   var user = req.query.id;
+  var name = req.query.name;
+
+  userRef.child(user).on('value', function(snapshot){
+    if(!snapshot.val()){
+      userRef.child(user).set({name: name, stareTime: 0, wins: 0, loses: 0});
+    }
+  });
 
   queueRef.once('value', function(snapshot) {
   if(!snapshot.val()){
@@ -86,7 +93,35 @@ exports.startgame = function(req, res){
 }
 
 exports.blink = function(req, res){
+  var gameId = req.query.game;
+  var blinkee = req.query.id;
 
+  var gameQuery = gameRef.child(gameId);
+
+  gameQuery.once('value', function(snapshot){
+    var result = snapshot.val();
+    var elapsed = (new Date).getTime() - result.startedAt;
+    var onComplete = function(){
+      //Update wins/loses of both users
+      userRef.child(blinkee === result.user1 ? result.user2 : result.user1).child('wins').transaction(function(currentData){
+        return  currentData + 1;
+      });
+      userRef.child(blinkee).child('loses').transaction(function(currentData){
+        return  currentData + 1;
+      });
+
+      //Update times for both users
+      userRef.child(result.user1).child('stareTime').transaction(function(currentData){
+        return  currentData + elapsed;
+      });
+      userRef.child(result.user2).child('stareTime').transaction(function(currentData){
+        return  currentData + elapsed;
+      });
+      res.send({status: 'status updated'});
+    }
+
+    gameQuery.update({endedAt: (new Date).getTime(), elapsed: elapsed, winner: blinkee === result.user1 ? 2 : 1}, onComplete);
+  });
 }
 
 //Low priority
