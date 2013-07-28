@@ -2,6 +2,7 @@ package com.opentok.android.demo.helloworld;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -40,6 +41,8 @@ import com.opentok.stat.SubscriberStatistics;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import android.provider.Settings.Secure;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -80,11 +83,14 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
     NetApi netApi;
 
-    private String userId = "8";
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        userId = Secure.getString(this.getContentResolver(), Secure.ANDROID_ID);
+        if (userId == null) userId = "8";
 
         netApi = new NetApi(this, "http://ec2-54-227-163-21.compute-1.amazonaws.com:3000");
         netApi.getQueue(userId, "yooo");
@@ -173,14 +179,11 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                 @Override
                 public void callback(Bitmap b) {
                     //To change body of implemented methods use File | Settings | File Templates.
-                    if (toast != null) {
-                        toast.cancel();
-                    }
-                    boolean blinked = !eyesFound(b);
-                    if (view && blinked) {
-                        toast = Toast.makeText(getApplicationContext(), blinked + "", Toast.LENGTH_SHORT);
-                        toast.show();
 
+                    boolean blinked = !eyesFound(b);
+                    if (view && blinked && !blinkedcalled) {
+
+                        blinkedcalled = true;
                         String splits[] = mGamesUrl.split("/");
                         String gamesHash = splits[splits.length-1];
 
@@ -196,6 +199,8 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         }
 
     }
+
+    boolean blinkedcalled = false;
 
     private Toast toast;
 
@@ -506,9 +511,17 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
                 if(winner == userMe) {
                     // I win
+                    Intent i = new Intent(HelloWorldActivity.this, GameOver.class);
+                    i.putExtra("didIWin", true);
+                    startActivity(i);
+                    finish();
                 }
-                else {
+                else if (winner != 0){
                     // I lose
+                    Intent i = new Intent(HelloWorldActivity.this, GameOver.class);
+                    i.putExtra("didIWin", false);
+                    startActivity(i);
+                    finish();
                 }
             }
 
@@ -517,6 +530,7 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             }
         });
     }
+
 
     @Override
     public void leaderboardCallback(List<NetApi.User> users) {

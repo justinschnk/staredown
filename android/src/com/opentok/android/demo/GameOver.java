@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,14 +22,7 @@ public class GameOver extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gameover);
 
-        Button b2 = (Button) findViewById(R.id.button2);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(GameOver.this, LeaderboardActivity.class);
-                startActivity(intent);
-            }
-        });
+       TextView tv = (TextView) findViewById(R.id.winner);
+       tv.setText(getIntent().getBooleanExtra("didIWin", true) ? "You Won!" : "You Lost :( Try again!");
     }
 }
