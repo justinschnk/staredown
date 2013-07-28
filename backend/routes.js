@@ -33,7 +33,7 @@ exports.queue = function(req, res){
     var location = '127.0.0.1';
     opentok.createSession(location, function(result){
       var sessionId = result;
-      var token = opentok.generateToken(sessionId);
+      var token = opentok.generateToken({session_id:sessionId});
 
       var newSession = queueRef.push();
 
@@ -73,7 +73,7 @@ exports.queue = function(req, res){
 
         var oldQueueRef = new Firebase(qURL.toString());
         console.log("qurl " + qURL);
-        oldQueueRef.child('url').set(newGame.toString(), function(){oldQueueRef.remove();});
+        oldQueueRef.child('url').set(newGame.toString(), function(){setTimeout(function(){oldQueueRef.remove();}, 3000)});
 
         res.send(JSON.stringify({status: 'connected', sessionId: qSession, token: user2Token, firebase: newGame.toString()}));
       });

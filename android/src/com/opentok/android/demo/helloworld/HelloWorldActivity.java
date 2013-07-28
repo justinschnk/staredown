@@ -458,6 +458,7 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.d(TAG, "value listener, data change, "+dataSnapshot.getValue()+", "+dataSnapshot.getName());
 
+
                     if(dataSnapshot.getValue() == null) {
                         return;
                     }
@@ -465,6 +466,7 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                     String gamesUrl = (String)((Map)dataSnapshot.getValue()).get("url");
                     //listenToGames(gamesUrl);
                     mGamesUrl = gamesUrl;
+
                 }
 
                 @Override
