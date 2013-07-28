@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#dfe7f2"
+    android:id="@+id/mainlayout" >
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+        <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/progressBar"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:text="Finding a match..."
+                android:id="@+id/textView"/>
+    </LinearLayout>
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/subscriberview"
+   /> 
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:background="@drawable/draw_stroke"
+       android:id="@+id/publisherview"
+   />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:textSize="50dp"
+        android:textColor="#fff"
+        android:visibility="invisible"
+        android:text="Ready?"
+        android:layout_alignParentLeft="false" android:layout_alignParentBottom="false"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView" android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"/>
+
+</RelativeLayout>
