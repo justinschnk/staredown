@@ -4,15 +4,14 @@
     <list default="true" id="6b54f2a3-3c67-4823-a5c1-8943e25540b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="backend.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374971184571" ignored="false" />
     <file path="/README.md" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374958547217" ignored="false" />
     <file path="/home.ejs" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374959256163" ignored="false" />
-    <file path="/routes.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374992266496" ignored="false" />
-    <file path="/app.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374980850006" ignored="false" />
+    <file path="/routes.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374995140980" ignored="false" />
+    <file path="/app.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374993144637" ignored="false" />
     <file path="/fragment.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374990394912" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,62 +31,43 @@
     <favorites_list name="backend" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="routes.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="11" selection-start="2333" selection-end="2333" vertical-scroll-proportion="0.45974576">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="251" column="10" selection-start="5571" selection-end="5571" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.ejs" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="45" selection-start="553" selection-end="553" vertical-scroll-proportion="-0.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/home.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="32" selection-start="763" selection-end="763" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6252983">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="routes.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/routes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="77" column="69" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.5555556">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="34" column="42" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="34" column="42" selection-start="884" selection-end="884" vertical-scroll-proportion="1.0087146">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -224,6 +204,14 @@
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Node.js.app.js">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
@@ -382,6 +370,13 @@
         <state line="5" column="16" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/opentok/lib/opentok.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="0" selection-start="3515" selection-end="3515" vertical-scroll-proportion="0.33262712">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -391,7 +386,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/home.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="45" selection-start="553" selection-end="553" vertical-scroll-proportion="-0.625">
+        <state line="11" column="45" selection-start="553" selection-end="553" vertical-scroll-proportion="0.03348214">
           <folding />
         </state>
       </provider>
@@ -405,28 +400,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="251" column="10" selection-start="5571" selection-end="5571" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/opentok/lib/opentok.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="0" selection-start="3515" selection-end="3515" vertical-scroll-proportion="0.33262712">
+        <state line="251" column="10" selection-start="5571" selection-end="5571" vertical-scroll-proportion="0.30084747">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="32" selection-start="763" selection-end="763" vertical-scroll-proportion="0.0">
+        <state line="34" column="42" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="11" selection-start="2333" selection-end="2333" vertical-scroll-proportion="0.45974576">
+        <state line="77" column="69" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.5555556">
           <folding />
         </state>
       </provider>

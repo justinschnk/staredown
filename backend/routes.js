@@ -70,11 +70,15 @@ exports.queue = function(req, res){
 
 
 exports.startgame = function(req, res){
+  var onComplete = function(error) {
+    if (error) res.send({status: 'failed to start'});
+    else res.send({status: 'started game'});
+  };
+
   var gameId = req.query.game;
 
-  //Add server time to game
-
-  res.send('startgame');
+  var gameQuery = gameRef.child(gameId);
+  gameQuery.update({startedAt: Firebase.ServerValue.TIMESTAMP, winner: 0}, onComplete);
 }
 
 //Low priority
