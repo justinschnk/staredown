@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/android-support-v4.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/opentok-android-sdk.jar!/" />
-      <root url="jar://$PROJECT_DIR$/libs/firebase-client-jvm-LATEST.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
