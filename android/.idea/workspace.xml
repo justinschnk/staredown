@@ -41,17 +41,24 @@
     <list default="true" id="15aaa66a-8e53-417e-82f0-858c7d305f63" name="Default" comment="" />
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
+<<<<<<< HEAD
     <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/Manifest.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030894343" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/R.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030894343" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/BuildConfig.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030905049" ignored="false" />
+=======
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/Manifest.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375031056753" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/R.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375031056753" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/BuildConfig.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375031143529" ignored="false" />
+>>>>>>> usernames
     <file path="/fragment.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375021528946" ignored="false" />
     <file path="/Dummy.txt" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375027474265" ignored="false" />
     <file path="/main_activity.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375022710803" ignored="false" />
     <file path="/GameOver.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375029021971" ignored="false" />
     <file path="/gameover.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030703864" ignored="false" />
-    <file path="/HelloWorldActivity.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030556125" ignored="false" />
+    <file path="/HelloWorldActivity.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375032033869" ignored="false" />
     <file path="/list_item.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375029707219" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030648641" ignored="false" />
+    <file path="/MainActivity.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375031999799" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,10 +108,18 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
         <option name="ENABLED" value="false" />
+=======
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java" line="485" class="com.opentok.android.demo.helloworld.HelloWorldActivity" package="com.opentok.android.demo.helloworld">
+        <option name="ENABLED" value="true" />
+>>>>>>> usernames
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="REMOVE_AFTER_HIT" value="false" />
@@ -129,11 +144,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="22" selection-start="1232" selection-end="2208" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="131" column="47" selection-start="3494" selection-end="3494" vertical-scroll-proportion="0.3429878">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,8 +158,18 @@
       <file leaf-file-name="HelloWorldActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="279" column="23" selection-start="9871" selection-end="9878" vertical-scroll-proportion="0.5675">
               <folding />
+=======
+            <state line="84" column="37" selection-start="3580" selection-end="3580" vertical-scroll-proportion="-5.769231">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7002#7727#0" expanded="true" />
+                <element signature="e#7712#7713#0" expanded="true" />
+                <element signature="e#10594#10602#0" expanded="true" />
+              </folding>
+>>>>>>> usernames
             </state>
           </provider>
         </entry>
@@ -162,7 +189,11 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="13" column="95" selection-start="504" selection-end="504" vertical-scroll-proportion="-7.8">
+=======
+            <state line="10" column="45" selection-start="410" selection-end="410" vertical-scroll-proportion="-2.8846154">
+>>>>>>> usernames
               <folding />
             </state>
           </provider>
@@ -240,13 +271,16 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/NetApiCallback.java" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java" />
-        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/LeaderboardActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/main_activity.xml" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/GameOver.java" />
         <option value="$PROJECT_DIR$/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/gameover.xml" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java" />
+>>>>>>> usernames
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java" />
       </list>
     </option>
@@ -683,17 +717,19 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="57" selection-start="2325" selection-end="2343" vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7002#7727#0" expanded="true" />
+            <element signature="e#7712#7713#0" expanded="true" />
+            <element signature="e#10594#10602#0" expanded="true" />
+          </folding>
+>>>>>>> usernames
         </state>
       </provider>
     </entry>
@@ -773,6 +809,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/res/layout/gameover.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -790,6 +827,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> usernames
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="74" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
@@ -799,8 +838,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="279" column="23" selection-start="9871" selection-end="9878" vertical-scroll-proportion="0.5675">
+=======
+        <state line="10" column="45" selection-start="410" selection-end="410" vertical-scroll-proportion="-2.8846154">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/android-sdk-macosx/sources/android-17/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="873" column="38" selection-start="30109" selection-end="30109" vertical-scroll-proportion="0.33231708">
+>>>>>>> usernames
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="37" selection-start="3580" selection-end="3580" vertical-scroll-proportion="-5.769231">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7002#7727#0" expanded="true" />
+            <element signature="e#7712#7713#0" expanded="true" />
+            <element signature="e#10594#10602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="47" selection-start="3494" selection-end="3494" vertical-scroll-proportion="0.3429878">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
