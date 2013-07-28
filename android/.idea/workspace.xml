@@ -9,24 +9,40 @@
         <option name="name" value="MainActivity" />
         <option name="pid" value="" />
       </filter>
+      <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="demo-hello-world" />
+        <option name="name" value="demo-hello-world" />
+        <option name="pid" value="" />
+      </filter>
+      <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="HelloWorldActivity" />
+        <option name="name" value="HelloWorldActivity" />
+        <option name="pid" value="" />
+      </filter>
     </filters>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="MainActivity" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="HelloWorldActivity" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" name="Default" comment="" />
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375014221316" ignored="false" />
-    <file path="/MainActivity.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375014645881" ignored="false" />
-    <file path="/NetApi.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375012876611" ignored="false" />
-    <file path="/NetApiCallback.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375012174967" ignored="false" />
+    <file path="/MainActivity.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375019662655" ignored="false" />
+    <file path="/NetApi.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375018636527" ignored="false" />
+    <file path="/NetApiCallback.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375017949767" ignored="false" />
     <file path="/Queue.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375012121077" ignored="false" />
-    <file path="/Dummy.txt" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375013002928" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/Manifest.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375013432607" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/R.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375013432607" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/BuildConfig.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375013657247" ignored="false" />
+    <file path="/Dummy.txt" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375019934887" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/Manifest.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375016622295" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/R.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375016622295" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/BuildConfig.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375017053001" ignored="false" />
+    <file path="/HelloWorldActivity.java" changelist="bc22e672-a7bd-4e31-afc9-f5b666c58c9d" time="1375020690583" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,14 +103,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="98" selection-start="3835" selection-end="3835" vertical-scroll-proportion="0.9956332">
+            <state line="43" column="35" selection-start="1373" selection-end="1373" vertical-scroll-proportion="-10.16">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1460#1614#0" expanded="true" />
-                <element signature="e#1603#1604#0" expanded="true" />
+                <element signature="e#1458#1612#0" expanded="true" />
+                <element signature="e#1601#1602#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HelloWorldActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="434" column="38" selection-start="15175" selection-end="15175" vertical-scroll-proportion="0.28809524">
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,7 +130,7 @@
       <file leaf-file-name="NetApiCallback.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/NetApiCallback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
+            <state line="4" column="16" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,7 +139,7 @@
       <file leaf-file-name="NetApi.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="32" selection-start="1061" selection-end="1070" vertical-scroll-proportion="0.0">
+            <state line="82" column="43" selection-start="2796" selection-end="2801" vertical-scroll-proportion="-2.12">
               <folding />
             </state>
           </provider>
@@ -138,10 +165,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/Queue.java" />
-        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java" />
-        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/NetApiCallback.java" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/QueueData.java" />
+        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/NetApiCallback.java" />
+        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java" />
       </list>
     </option>
   </component>
@@ -179,7 +207,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -216,14 +243,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helloworld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
@@ -269,19 +320,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -308,6 +346,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -414,14 +465,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32963988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32825485" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21106821" sideWeight="0.6703601" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32963988" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -494,13 +545,27 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="32" selection-start="1061" selection-end="1070" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/server/Api.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1460#1614#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#1458#1612#0" expanded="true" />
+            <element signature="e#1601#1602#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -538,6 +603,13 @@
         <state line="567" column="22" selection-start="20117" selection-end="20117" vertical-scroll-proportion="0.33187774" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/QueueData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="48" selection-end="48" vertical-scroll-proportion="0.06550218">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/server/Api.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="13" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
@@ -547,32 +619,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/NetApiCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
+        <state line="4" column="16" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/android-sdk/sources/android-17/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1435" column="88" selection-start="53474" selection-end="53474" vertical-scroll-proportion="0.59477127">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="32" selection-start="1061" selection-end="1070" vertical-scroll-proportion="0.0">
+        <state line="82" column="43" selection-start="2796" selection-end="2801" vertical-scroll-proportion="-2.12">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/QueueData.java">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="48" selection-end="48" vertical-scroll-proportion="0.06550218">
+        <state line="29" column="72" selection-start="1246" selection-end="1250" vertical-scroll-proportion="0.516129">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="98" selection-start="3835" selection-end="3835" vertical-scroll-proportion="0.9956332">
+        <state line="43" column="35" selection-start="1373" selection-end="1373" vertical-scroll-proportion="-10.16">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1460#1614#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#1458#1612#0" expanded="true" />
+            <element signature="e#1601#1602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="434" column="38" selection-start="15175" selection-end="15175" vertical-scroll-proportion="0.28809524">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
