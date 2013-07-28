@@ -41,6 +41,7 @@ import com.opentok.stat.SubscriberStatistics;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -482,6 +483,11 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                 //To change body of implemented methods use File | Settings | File Templates.
             }
         });
+    }
+
+    @Override
+    public void leaderboardCallback(List<NetApi.User> users) {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public void listenToGames(String gamesUrl) {

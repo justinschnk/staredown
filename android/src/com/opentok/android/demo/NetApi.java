@@ -54,6 +54,7 @@ public class NetApi {
     public void sendGame(String someHash) {
         String getUrl = mUrl + "/startgame?game="+someHash;
         new RequestTask("games").execute(getUrl);
+    }
 
     public void getLeaderboard() {
         String getUrl = mUrl + "/leaderboard?json=true";

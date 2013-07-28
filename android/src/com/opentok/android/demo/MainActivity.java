@@ -127,29 +127,4 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-
-    @Override
-    public void queueCallback(QueueData queueData) {
-        Log.d(TAG, "queueCallback: "+queueData.toString());
-
-        if(queueData.getmStatus().equals("waiting")) {
-            Firebase firebase = new Firebase(queueData.getmFirebase());
-            firebase.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    Log.d(TAG, "data change, "+dataSnapshot.getValue()+", "+dataSnapshot.getName());
-                }
-
-                @Override
-                public void onCancelled() {
-                    //To change body of implemented methods use File | Settings | File Templates.
-                }
-            });
-        }
-    }
-
-    @Override
-    public void leaderboardCallback(List<NetApi.User> users) {
-
-    }
 }
