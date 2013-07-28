@@ -183,7 +183,7 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                 @Override
                 public void callback(Bitmap b) {
                     //To change body of implemented methods use File | Settings | File Templates.
-
+                    try {
                     boolean blinked = !eyesFound(b);
                     if (view && blinked && !blinkedcalled) {
 
@@ -196,6 +196,9 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                     }
 
                     b = null;
+                    } catch (Exception e ) {
+                        e.printStackTrace();
+                    }
                 }
             };
 
@@ -281,7 +284,7 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
         iv.setImageBitmap(b);
 
-        if(avgLeftQueue.size() < 25) {
+        if(avgLeftQueue.size() < 5) {
             avgLeftQueue.add(leftEyeRatio);
             return true;
         } else {
@@ -293,7 +296,7 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
             Log.d(LOGTAG, "avgLeft: "+avgLeft);
 
-            if (leftEyeRatio < avgLeft*0.6666) {
+            if (leftEyeRatio < avgLeft*0.5) {
                 // blinked
                 Log.d(LOGTAG, "blinked, leftEyeRatio was just "+leftEyeRatio);
                 return false;
@@ -521,7 +524,7 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d(TAG, "games callback: "+dataSnapshot.getValue());
-
+                try {
                 long winner = (Long)((Map)dataSnapshot.getValue()).get("winner");
 
 
@@ -538,6 +541,9 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                     i.putExtra("didIWin", false);
                     startActivity(i);
                     finish();
+                }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
 
