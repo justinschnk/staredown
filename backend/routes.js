@@ -37,7 +37,7 @@ exports.queue = function(req, res){
 
       var newSession = queueRef.push();
 
-      queueRef.set({
+      newSession.set({
         user1: user,
         session: sessionId,
         user1Token: token,
@@ -48,33 +48,35 @@ exports.queue = function(req, res){
     });
 
   } else {
-    console.log('Session found, adding user to game');
-    var queueData = snapshot.val();
+      console.log('Session found, adding user to game');
 
-    var qSession = queueData.session;
-    var qUser1 = queueData.user1;
-    var qUser1Token = queueData.user1Token;
-    var qURL = queueData.url;
-    var user2Token = opentok.generateToken({session_id: qSession});
+      snapshot.forEach(function(childSnapshot) {
+        var queueData = childSnapshot.val();
 
-    var newGame = gameRef.push();
+        var qSession = queueData.session;
+        var qUser1 = queueData.user1;
+        var qUser1Token = queueData.user1Token;
+        var qURL = queueData.url;
+        var user2Token = opentok.generateToken({session_id: qSession});
 
-    newGame.set({
-      session: qSession,
-      user1Token: qUser1Token,
-      user2Token: user2Token,
-      user1: qUser1,
-      user2: user,
-      winner: 0,
-      url: newGame.toString()
-    });
+        var newGame = gameRef.push();
 
-    var oldQueueRef = new Firebase(qURL);
-    oldQueueRef.update({firebase: newGame.toString()}, function(){
-      setInterval(function(){queueRef.remove();}, 1000);
-    });
+        newGame.set({
+          session: qSession,
+          user1Token: qUser1Token,
+          user2Token: user2Token,
+          user1: qUser1,
+          user2: user,
+          winner: 0,
+          url: newGame.toString()
+        });
 
-    res.send(JSON.stringify({status: 'connected', sessionId: qSession, token: user2Token, firebase: newGame.toString()}));
+        var oldQueueRef = new Firebase(qURL.toString());
+        console.log("qurl " + qURL);
+        oldQueueRef.child('url').set(newGame.toString(), function(){oldQueueRef.remove();});
+
+        res.send(JSON.stringify({status: 'connected', sessionId: qSession, token: user2Token, firebase: newGame.toString()}));
+      });
   }
   });
 }
