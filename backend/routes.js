@@ -47,6 +47,7 @@ exports.queue = function(req, res){
     var qSession = queueData.session;
     var qUser1 = queueData.user1;
     var qUser1Token = queueData.user1Token;
+    var qURL = queueData.url;
     var user2Token = opentok.generateToken({session_id: qSession});
 
     var newGame = gameRef.push();
@@ -61,7 +62,10 @@ exports.queue = function(req, res){
       url: newGame.toString()
     });
 
-    queueRef.remove();
+    var oldQueueRef = new Firebase(qURL);
+    oldQueueRef.update({url: newGame.toString()}, function(){
+      queueRef.remove();
+    });
 
     res.send(JSON.stringify({status: 'connected', sessionId: qSession, token: user2Token, firebase: newGame.toString()}));
   }
