@@ -124,26 +124,15 @@ exports.blink = function(req, res){
   });
 }
 
-//Low priority
 exports.leaderboard = function(req, res){
   var users = [];
 
-  userRef.on('value', function(snapshot) {
-    res.send(JSON.stringify(snapshot));
+  userRef.once('value', function(snapshot) {
+    for (var key in snapshot.val()) {
+      if (snapshot.val().hasOwnProperty(key)) {
+        users.push(snapshot.val()[key]);
+      }
+    }
+    res.send(JSON.stringify(_.sortBy(users, 'wins').reverse()));
   });
-
-  //res.send(JSON.stringify(_.sortBy(users, 'wins').reverse()));
-}
-
-//Test stub
-exports.addUser = function(req, res){
-  userRef.push({
-    uid: '1',
-    username: 'Vivek',
-    stareTime: 10,
-    wins: 3,
-    loses: 0,
-    ratio: 1
-  });
-  res.send('added user');
 }

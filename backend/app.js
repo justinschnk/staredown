@@ -32,7 +32,6 @@ app.get('/', routes.home);
 app.get('/queue', routes.queue);
 app.get('/startgame', routes.startgame);
 app.get('/blink', routes.blink);
-app.get('/adduser', routes.addUser);
 app.get('/leaderboard', routes.leaderboard);
 
 http.createServer(app).listen(app.get('port'), function(){
