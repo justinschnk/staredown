@@ -1,6 +1,9 @@
 package com.opentok.android.demo;
 
 import android.widget.Button;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.ValueEventListener;
 import com.opentok.android.demo.controlbar.ControlBarActivity;
 import com.opentok.android.demo.helloworld.HelloWorldActivity;
 
@@ -24,11 +27,12 @@ import android.widget.ListView;
  * - a basic hello-world activity
  * - a basic hello-world activity with control bar with stream name and action buttons to switch camera and audio mute
  */
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements NetApiCallback {
 
     private static final String LOGTAG = "demo-opentok-sdk";
     private WakeLock wakeLock;
 
+    private final String TAG = "MainActivity";
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,9 @@ public class MainActivity extends Activity {
         // Disable screen dimming
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "Full Wake Lock");
+
+        NetApi netApi = new NetApi(this, "http://ec2-54-227-163-21.compute-1.amazonaws.com:3000");
+        netApi.getQueue("7", "yooo");
     }
 
     @Override
@@ -105,5 +112,25 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(MainActivity.this, ControlBarActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    @Override
+    public void queueCallback(QueueData queueData) {
+        Log.d(TAG, "queueCallback: "+queueData.toString());
+
+        if(queueData.getmStatus().equals("waiting")) {
+            Firebase firebase = new Firebase(queueData.getmFirebase());
+            firebase.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.d(TAG, "data change, "+dataSnapshot.getValue()+", "+dataSnapshot.getName());
+                }
+
+                @Override
+                public void onCancelled() {
+                    //To change body of implemented methods use File | Settings | File Templates.
+                }
+            });
+        }
     }
 }
