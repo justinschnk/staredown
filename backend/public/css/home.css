@@ -1,9 +1,11 @@
 .header {
-    font-family: 'Kaushan Script', cursive;
-}
-
-p {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 200px;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    top: -110px;
+    right: 15px;
 }
 
 body {
@@ -11,6 +13,6 @@ body {
     background-repeat:repeat;
 }
 
-.login {
-    text-align: center;
+.main{
+    top: -110px;
 }
