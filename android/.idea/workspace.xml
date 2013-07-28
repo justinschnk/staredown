@@ -35,22 +35,23 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="games callback" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15aaa66a-8e53-417e-82f0-858c7d305f63" name="Default" comment="" />
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/Manifest.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375025643372" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/R.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375025643372" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/BuildConfig.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375025656866" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/Manifest.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030650563" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/R.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030650563" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/BuildConfig.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030665250" ignored="false" />
     <file path="/fragment.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375021528946" ignored="false" />
     <file path="/Dummy.txt" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375027474265" ignored="false" />
     <file path="/main_activity.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375022710803" ignored="false" />
     <file path="/GameOver.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375029021971" ignored="false" />
-    <file path="/gameover.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375027669121" ignored="false" />
-    <file path="/HelloWorldActivity.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030170008" ignored="false" />
+    <file path="/gameover.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030703864" ignored="false" />
+    <file path="/HelloWorldActivity.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030556125" ignored="false" />
     <file path="/list_item.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375029707219" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030648641" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,10 +138,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelloWorldActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HelloWorldActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="518" column="41" selection-start="17878" selection-end="17878" vertical-scroll-proportion="0.55105346">
+            <state line="506" column="30" selection-start="17359" selection-end="17359" vertical-scroll-proportion="-6.1538463">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6831#7556#0" expanded="true" />
@@ -162,13 +163,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameover.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="gameover.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/gameover.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="40" selection-start="791" selection-end="791" vertical-scroll-proportion="-5.480769">
+            <state line="10" column="45" selection-start="410" selection-end="410" vertical-scroll-proportion="0.24834438">
               <folding />
             </state>
           </provider>
@@ -210,7 +211,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="31" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
+            <state line="36" column="74" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -249,10 +250,11 @@
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/LeaderboardActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/main_activity.xml" />
-        <option value="$PROJECT_DIR$/res/layout/gameover.xml" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/GameOver.java" />
         <option value="$PROJECT_DIR$/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/gameover.xml" />
       </list>
     </option>
   </component>
@@ -741,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="31" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/LeaderboardActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="0" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0">
@@ -782,16 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/gameover.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="40" selection-start="791" selection-end="791" vertical-scroll-proportion="-5.480769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/GameOver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="71" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
@@ -810,13 +795,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="518" column="41" selection-start="17878" selection-end="17878" vertical-scroll-proportion="0.55105346">
+        <state line="506" column="30" selection-start="17359" selection-end="17359" vertical-scroll-proportion="-6.1538463">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6831#7556#0" expanded="true" />
             <element signature="e#7541#7542#0" expanded="true" />
             <element signature="e#10423#10431#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="74" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/gameover.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="45" selection-start="410" selection-end="410" vertical-scroll-proportion="0.24834438">
+          <folding />
         </state>
       </provider>
     </entry>
