@@ -70,7 +70,7 @@ exports.queue = function(req, res){
     });
 
     var oldQueueRef = new Firebase(qURL);
-    oldQueueRef.update({url: newGame.toString()}, function(){
+    oldQueueRef.update({firebase: newGame.toString()}, function(){
       queueRef.remove();
     });
 
@@ -125,6 +125,8 @@ exports.blink = function(req, res){
 }
 
 exports.leaderboard = function(req, res){
+  var json = req.query.json;
+
   var users = [];
 
   userRef.once('value', function(snapshot) {
@@ -133,6 +135,11 @@ exports.leaderboard = function(req, res){
         users.push(snapshot.val()[key]);
       }
     }
-    res.send(JSON.stringify(_.sortBy(users, 'wins').reverse()));
+    if(json){
+      res.send(JSON.stringify(_.sortBy(users, 'wins').reverse()));
+    }
+    else{
+      res.render('leaderboard', {users: users});
+    }
   });
 }
