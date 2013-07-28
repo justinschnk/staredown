@@ -19,7 +19,7 @@ exports.queue = function(req, res){
   var user = req.query.id;
   var name = req.query.name;
 
-  userRef.child(user).on('value', function(snapshot){
+  userRef.child(user).once('value', function(snapshot){
     if(!snapshot.val()){
       userRef.child(user).set({name: name, stareTime: 0, wins: 0, loses: 0});
     }
