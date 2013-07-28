@@ -21,6 +21,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.List;
+
 /**
  * Main demo app for getting started with the OpenTok Android SDK.
  * It contains:
@@ -44,6 +46,16 @@ public class MainActivity extends Activity implements NetApiCallback {
             @Override
             public void onClick(View v) {
                 startHelloWorldApp();
+            }
+        });
+
+        Button b2 = (Button) findViewById(R.id.button2);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, LeaderboardActivity.class);
+                startActivity(intent);
             }
         });
        
@@ -132,5 +144,10 @@ public class MainActivity extends Activity implements NetApiCallback {
                 }
             });
         }
+    }
+
+    @Override
+    public void leaderboardCallback(List<NetApi.User> users) {
+
     }
 }
