@@ -6,7 +6,7 @@ public class Api {
         public String name;
         public int wins;
         public int losses;
-        public int totalTimeStared;
+        public int stareTime;
     }
 
     public class Game {

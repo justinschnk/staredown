@@ -5,4 +5,10 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#dfe7f2"
+            android:cacheColorHint="#dfe7f2"
+            android:id="@+id/listView" android:layout_gravity="center"/>
 </LinearLayout>

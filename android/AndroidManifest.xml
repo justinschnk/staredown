@@ -39,6 +39,15 @@
                 	<category android:name="android.intent.category.DEFAULT" />
             	</intent-filter>
         	</activity>
+
+            <activity
+                    android:name="com.opentok.android.demo.LeaderboardActivity"
+                    android:configChanges="orientation|keyboardHidden|screenSize">
+                <intent-filter>
+                    <action android:name="com.opentok.android.demo.LeaderboardActivity" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            </activity>
         	
         	<activity
            		android:name="com.opentok.android.demo.controlbar.ControlBarActivity"

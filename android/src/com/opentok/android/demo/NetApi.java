@@ -2,6 +2,7 @@ package com.opentok.android.demo;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import com.opentok.android.demo.server.Api;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
@@ -9,17 +10,36 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 public class NetApi {
     private String mUrl;
     private NetApiCallback mNetApiCallback;
 
     private static final String TAG = "NetApi";
+
+    public class User {
+        public String id;
+        public String name;
+        public int wins;
+        public int losses;
+        public int stareTime;
+    }
+
+    public class Game {
+        public String id;
+        public String uid1;
+        public String uid2;
+        public int duration;
+        public int winner;
+    }
 
     public NetApi(NetApiCallback netApiCallback, String url) {
         mUrl = url;
@@ -29,6 +49,11 @@ public class NetApi {
     public void getQueue(String id, String name) {
         String getUrl = mUrl + "/queue?id=" + id + "&name=" + name;
         new RequestTask("queue").execute(getUrl);
+    }
+
+    public void getLeaderboard() {
+        String getUrl = mUrl + "/leaderboard?json=true";
+        new RequestTask("leaderboard").execute(getUrl);
     }
 
 
@@ -71,6 +96,8 @@ public class NetApi {
             if(mEndpoint.equals("queue")) {
                 QueueData queueData = getQueueDataFromJson(result);
                 mNetApiCallback.queueCallback(queueData);
+            } else if (mEndpoint.equals("leaderboard")) {
+                mNetApiCallback.leaderboardCallback(getLeaderboard(result));
             }
         }
 
@@ -83,6 +110,27 @@ public class NetApi {
                         jsonObject.getString("token"),
                         jsonObject.getString("firebase")
                 );
+            } catch (JSONException e) {
+                Log.d(TAG, "JSONException: " + e);
+                return null;
+            }
+        }
+
+
+        private List<User> getLeaderboard(String result) {
+            try {
+                LinkedList<User> l = new LinkedList<User>();
+                JSONArray array = new JSONArray(result);
+                for (int i = 0; i < array.length(); i++) {
+                    JSONObject object = array.getJSONObject(i);
+                    User user = new User();
+                    user.name = object.getString("name");
+                    user.losses = object.getInt("loses");
+                    user.stareTime = object.getInt("stareTime");
+                    user.wins = object.getInt("wins");
+                    l.add(user);
+                }
+                return l;
             } catch (JSONException e) {
                 Log.d(TAG, "JSONException: " + e);
                 return null;
