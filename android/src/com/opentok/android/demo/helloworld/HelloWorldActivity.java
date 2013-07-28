@@ -515,8 +515,12 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d(TAG, "games callback: "+dataSnapshot.getValue());
 
+<<<<<<< HEAD
 
                 int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
+=======
+                long winner = (Long)((Map)dataSnapshot.getValue()).get("winner");
+>>>>>>> 2de9cf0255e377e927b36ce007f1208957851148
 
                 if(winner == userMe) {
                     // I win
