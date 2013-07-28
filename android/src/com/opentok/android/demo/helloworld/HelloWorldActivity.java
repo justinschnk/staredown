@@ -201,11 +201,15 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
     private int RGB_MASK = 0x00ffffff;
 
-    public boolean eyesFound(Bitmap b) {
+    public boolean eyesFound(Bitmap b2) {
+
+        Bitmap b = b2.copy(Bitmap.Config.RGB_565, true);
+
         int width = b.getWidth();
         int height = b.getHeight();
 
         // Log.d(LOGTAG, "finding eyes... "+b.getConfig()+", "+width+"x"+height);
+
 
         FaceDetector faceDetector = new FaceDetector(width, height, 1);
         FaceDetector.Face[] faces = new FaceDetector.Face[1];
@@ -224,8 +228,8 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         int leftX = (int) (midPoint.x - dist/2);
         int leftY = (int) midPoint.y;
 
-        int rightX = (int) (midPoint.x + dist/2);
-        int rightY = (int) midPoint.y;
+//        int rightX = (int) (midPoint.x + dist/2);
+//        int rightY = (int) midPoint.y;
 
         int eyeWidth = (int) (dist/2);
         int eyeHeight = (int) (dist/3);
@@ -253,16 +257,20 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
             pixels[i] = Color.argb(255, threshold, threshold, threshold);
         }
-        //b.setPixels(pixels, 0, eyeWidth, startEyeX, startEyeY, eyeWidth, eyeHeight);
 
+        b.setPixels(pixels, 0, eyeWidth, startEyeX, startEyeY, eyeWidth, eyeHeight);
 
-        //b.setPixels(pixels, 0, eyeWidth, startEyeX, startEyeY, eyeWidth, eyeHeight);
         // --
 
         double leftEyeRatio = leftEyeColCount/(eyeWidth*eyeHeight+0.0);
 
-        if(avgLeftQueue.size() < 25) {
+        iv.setImageBitmap(b);
+
+        if(avgLeftQueue.size() < 500) {
             avgLeftQueue.add(leftEyeRatio);
+            if(avgLeftQueue.size() > 25) {
+                avgLeftQueue.remove(0);
+            }
             return true;
         } else {
             double avgLeft = 0;
@@ -502,14 +510,16 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d(TAG, "games callback: "+dataSnapshot.getValue());
 
-                int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
-
-                if(winner == userMe) {
-                    // I win
-                }
-                else {
-                    // I lose
-                }
+//                if (dataSnapshot.getValue() != null) {
+//                    int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
+//
+//                    if(winner == userMe) {
+//                        // I win
+//                    }
+//                    else {
+//                        // I lose
+//                    }
+//                }
             }
 
             @Override
