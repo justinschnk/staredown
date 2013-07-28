@@ -33,6 +33,7 @@ exports.queue = function(req, res){
     var location = '127.0.0.1';
     opentok.createSession(location, function(result){
       var sessionId = result;
+      console.log(result);
       var token = opentok.generateToken({session_id:sessionId});
 
       var newSession = queueRef.push();
