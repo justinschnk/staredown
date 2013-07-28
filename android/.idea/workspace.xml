@@ -42,17 +42,23 @@
     <list default="true" id="15aaa66a-8e53-417e-82f0-858c7d305f63" name="Default" comment="" />
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/Manifest.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030894343" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/R.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030894343" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/BuildConfig.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030905049" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/Manifest.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375031056753" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/R.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375031056753" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/opentok/android/demo/BuildConfig.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375031143529" ignored="false" />
     <file path="/fragment.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375021528946" ignored="false" />
     <file path="/Dummy.txt" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375027474265" ignored="false" />
     <file path="/main_activity.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375022710803" ignored="false" />
     <file path="/GameOver.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375029021971" ignored="false" />
+<<<<<<< HEAD
     <file path="/gameover.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030703864" ignored="false" />
     <file path="/HelloWorldActivity.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375032766120" ignored="false" />
+=======
+    <file path="/gameover.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375032292767" ignored="false" />
+    <file path="/HelloWorldActivity.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375032033869" ignored="false" />
+>>>>>>> 0723d969373ec972e76117eef15a2f7dbef4a3cb
     <file path="/list_item.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375029707219" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375030648641" ignored="false" />
+    <file path="/MainActivity.java" changelist="15aaa66a-8e53-417e-82f0-858c7d305f63" time="1375031999799" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,28 +73,17 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+<<<<<<< HEAD
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java" line="484" class="com.opentok.android.demo.helloworld.HelloWorldActivity$3" package="com.opentok.android.demo.helloworld">
         <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+=======
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
         <option name="ENABLED" value="false" />
+>>>>>>> 0723d969373ec972e76117eef15a2f7dbef4a3cb
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="REMOVE_AFTER_HIT" value="false" />
@@ -121,6 +116,38 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java" line="96" class="com.opentok.android.demo.helloworld.HelloWorldActivity" package="com.opentok.android.demo.helloworld">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java" line="157" class="com.opentok.android.demo.MainActivity" package="com.opentok.android.demo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -133,8 +160,10 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="22" selection-start="1232" selection-end="2208" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="159" column="59" selection-start="4469" selection-end="4469" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,9 +171,18 @@
       <file leaf-file-name="HelloWorldActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="207" column="13" selection-start="7671" selection-end="7671" vertical-scroll-proportion="-0.2675">
               <folding>
                 <element signature="imports" expanded="true" />
+=======
+            <state line="87" column="93" selection-start="3609" selection-end="3609" vertical-scroll-proportion="0.02946593">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7002#7727#0" expanded="true" />
+                <element signature="e#7712#7713#0" expanded="true" />
+                <element signature="e#10601#10609#0" expanded="true" />
+>>>>>>> 0723d969373ec972e76117eef15a2f7dbef4a3cb
               </folding>
             </state>
           </provider>
@@ -153,8 +191,10 @@
       <file leaf-file-name="GameOver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/GameOver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="71" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="10" column="85" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,7 +205,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="95" selection-start="504" selection-end="504" vertical-scroll-proportion="-7.8">
+            <state line="15" column="44" selection-start="625" selection-end="625" vertical-scroll-proportion="-4.326923">
               <folding />
             </state>
           </provider>
@@ -177,7 +217,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="35" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+            <state line="15" column="35" selection-start="621" selection-end="621" vertical-scroll-proportion="-4.326923">
               <folding />
             </state>
           </provider>
@@ -189,7 +229,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="27" selection-start="282" selection-end="288" vertical-scroll-proportion="0.0">
+            <state line="6" column="27" selection-start="282" selection-end="288" vertical-scroll-proportion="-1.7307693">
               <folding />
             </state>
           </provider>
@@ -225,7 +265,7 @@
       <file leaf-file-name="NetApi.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="55" selection-start="3639" selection-end="3639" vertical-scroll-proportion="0.0">
+            <state line="113" column="55" selection-start="3639" selection-end="3639" vertical-scroll-proportion="-15.0">
               <folding />
             </state>
           </provider>
@@ -243,22 +283,21 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/NetApiCallback.java" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java" />
-        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/LeaderboardActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/main_activity.xml" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/GameOver.java" />
         <option value="$PROJECT_DIR$/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/res/layout/gameover.xml" />
         <option value="$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/gameover.xml" />
+        <option value="$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="27" />
-    <option name="width" value="1602" />
-    <option name="height" value="874" />
+    <option name="y" value="22" />
+    <option name="width" value="1920" />
+    <option name="height" value="1174" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -288,7 +327,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -399,6 +437,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -471,19 +510,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -510,6 +536,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -587,35 +626,47 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1602" height="874" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.670778" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.670778" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.670778" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.670778" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39943075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39943075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32825485" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32825485" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 0723d969373ec972e76117eef15a2f7dbef4a3cb
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24919957" sideWeight="0.60056925" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24903475" sideWeight="0.6717452" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32825485" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.670778" order="3" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> 0723d969373ec972e76117eef15a2f7dbef4a3cb
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.670778" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -686,18 +737,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="57" selection-start="2325" selection-end="2343" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+=======
+            <element signature="e#7002#7727#0" expanded="true" />
+            <element signature="e#7712#7713#0" expanded="true" />
+            <element signature="e#10601#10609#0" expanded="true" />
+>>>>>>> 0723d969373ec972e76117eef15a2f7dbef4a3cb
           </folding>
         </state>
       </provider>
@@ -749,7 +799,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="282" selection-end="288" vertical-scroll-proportion="0.0">
+        <state line="6" column="27" selection-start="282" selection-end="288" vertical-scroll-proportion="-1.7307693">
           <folding />
         </state>
       </provider>
@@ -759,38 +809,14 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/GameOver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="71" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
+        <state line="15" column="35" selection-start="621" selection-end="621" vertical-scroll-proportion="-4.326923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/NetApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="55" selection-start="3639" selection-end="3639" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/gameover.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="95" selection-start="504" selection-end="504" vertical-scroll-proportion="-7.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="22" selection-start="1232" selection-end="2208" vertical-scroll-proportion="0.0">
+        <state line="113" column="55" selection-start="3639" selection-end="3639" vertical-scroll-proportion="-15.0">
           <folding />
         </state>
       </provider>
@@ -802,11 +828,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/android-sdk-macosx/sources/android-17/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="873" column="38" selection-start="30109" selection-end="30109" vertical-scroll-proportion="0.33231708">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/GameOver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="85" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/gameover.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="44" selection-start="625" selection-end="625" vertical-scroll-proportion="-4.326923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="59" selection-start="4469" selection-end="4469" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/opentok/android/demo/helloworld/HelloWorldActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="207" column="13" selection-start="7671" selection-end="7671" vertical-scroll-proportion="-0.2675">
           <folding>
             <element signature="imports" expanded="true" />
+=======
+        <state line="87" column="93" selection-start="3609" selection-end="3609" vertical-scroll-proportion="0.02946593">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7002#7727#0" expanded="true" />
+            <element signature="e#7712#7713#0" expanded="true" />
+            <element signature="e#10601#10609#0" expanded="true" />
+>>>>>>> 0723d969373ec972e76117eef15a2f7dbef4a3cb
           </folding>
         </state>
       </provider>

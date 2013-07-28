@@ -1,5 +1,6 @@
 package com.opentok.android.demo;
 
+import android.content.SharedPreferences;
 import android.widget.Button;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -39,6 +40,96 @@ public class MainActivity extends Activity {
 
     private final String TAG = "MainActivity";
 
+
+    public static final String[] usernames = {
+            "Apple",
+            "Apricot",
+            "Avocado",
+            "Banana",
+            "Breadfruit",
+            "Bilberry",
+            "Blackberry",
+            "Blackcurrant",
+            "Blueberry",
+            "Boysenberry",
+            "Currant",
+            "Cherry",
+            "Cherimoya",
+            "Chili",
+            "Cloudberry",
+            "Coconut",
+            "Damson",
+            "Date",
+            "Dragonfruit",
+            "Durian",
+            "Elderberry",
+            "Feijoa",
+            "Fig",
+            "Gooseberry",
+            "Grape",
+            "Grapefruit",
+            "Guava",
+            "Huckleberry",
+            "Honeydew",
+            "Jackfruit",
+            "Jettamelon",
+            "Jambul",
+            "Jujube",
+            "Kiwi fruit",
+            "Kumquat",
+            "Legume",
+            "Lemon",
+            "Lime",
+            "Loquat",
+            "Lychee",
+            "Mango",
+            "Melon",
+            "Canary melon",
+            "Cantaloupe",
+            "Honeydew",
+            "Watermelon",
+            "Rock melon",
+            "Nectarine",
+            "Nut",
+            "Orange",
+            "Clementine",
+            "Mandarine",
+            "Tangerine",
+            "Papaya",
+            "Peach",
+            "Pepper",
+            "Pear",
+            "Persimmon",
+            "Physalis",
+            "Plum",
+            "Prune",
+            "Pineapple",
+            "Pomegranate",
+            "Pomelo",
+            "Purple Mangosteen",
+            "Quince",
+            "Raspberry",
+            "Western raspberry",
+            "Rambutan",
+            "Redcurrant",
+            "Salal berry",
+            "Satsuma",
+            "Star fruit",
+            "Strawberry",
+            "Tamarillo",
+            "Tomato",
+            "Watermelon",
+            "Ugli fruit"
+    };
+
+    public static String generateUsername() {
+        StringBuilder sb = new StringBuilder();
+        int i = (int) Math.floor(Math.random() * usernames.length);
+        sb.append(usernames[i]);
+        int i2 = (int) Math.floor(Math.random() * 99);
+        sb.append(i2);
+        return sb.toString();
+    }
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +153,14 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        SharedPreferences settings = getSharedPreferences("blinkprefs", 0);
+        String name = settings.getString("name", "");
+        if (name.isEmpty()) {
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString("name", generateUsername());
+            editor.commit();
+        }
        
         // Disable screen dimming
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);

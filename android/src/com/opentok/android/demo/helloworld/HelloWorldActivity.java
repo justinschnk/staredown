@@ -3,6 +3,7 @@ package com.opentok.android.demo.helloworld;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -92,8 +93,11 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         userId = Secure.getString(this.getContentResolver(), Secure.ANDROID_ID);
         if (userId == null) userId = "8";
 
+        SharedPreferences settings = getSharedPreferences("blinkprefs", 0);
+        String name = settings.getString("name", "");
+
         netApi = new NetApi(this, "http://ec2-54-227-163-21.compute-1.amazonaws.com:3000");
-        netApi.getQueue(userId, "yooo");
+        netApi.getQueue(userId, name);
         
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
