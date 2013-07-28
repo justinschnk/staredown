@@ -156,7 +156,7 @@ public class MainActivity extends Activity {
 
         SharedPreferences settings = getSharedPreferences("blinkprefs", 0);
         String name = settings.getString("name", "");
-        if (!name.isEmpty()) {
+        if (name.isEmpty()) {
             SharedPreferences.Editor editor = settings.edit();
             editor.putString("name", generateUsername());
             editor.commit();
