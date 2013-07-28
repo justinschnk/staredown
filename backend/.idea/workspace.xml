@@ -10,8 +10,8 @@
     <file path="/Dummy.txt" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374971184571" ignored="false" />
     <file path="/README.md" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374958547217" ignored="false" />
     <file path="/home.ejs" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374959256163" ignored="false" />
-    <file path="/routes.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374995140980" ignored="false" />
-    <file path="/app.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374993144637" ignored="false" />
+    <file path="/routes.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374995531089" ignored="false" />
+    <file path="/app.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374995461764" ignored="false" />
     <file path="/fragment.js" changelist="6b54f2a3-3c67-4823-a5c1-8943e25540b0" time="1374990394912" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,16 +37,7 @@
           <file leaf-file-name="routes.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="77" column="69" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.5555556">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="42" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0">
+                <state line="84" column="14" selection-start="2341" selection-end="2341" vertical-scroll-proportion="2.3529413">
                   <folding />
                 </state>
               </provider>
@@ -59,7 +50,7 @@
           <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="42" selection-start="884" selection-end="884" vertical-scroll-proportion="1.0087146">
+                <state line="33" column="30" selection-start="835" selection-end="835" vertical-scroll-proportion="0.5751634">
                   <folding />
                 </state>
               </provider>
@@ -407,14 +398,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="42" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0">
+        <state line="33" column="30" selection-start="835" selection-end="835" vertical-scroll-proportion="0.5751634">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="69" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.5555556">
+        <state line="84" column="14" selection-start="2341" selection-end="2341" vertical-scroll-proportion="2.3529413">
           <folding />
         </state>
       </provider>

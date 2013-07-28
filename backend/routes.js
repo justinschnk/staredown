@@ -81,6 +81,10 @@ exports.startgame = function(req, res){
   gameQuery.update({startedAt: Firebase.ServerValue.TIMESTAMP, winner: 0}, onComplete);
 }
 
+exports.blink = function(req, res){
+
+}
+
 //Low priority
 exports.leaderboard = function(req, res){
   var users = [];
