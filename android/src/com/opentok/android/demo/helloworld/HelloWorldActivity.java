@@ -365,13 +365,13 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         Log.i(LOGTAG, "subscriber connected");
         view = true;
 
-        listenToGames(mGamesUrl);
     }
 
     boolean view = false;
 
     @Override
     public void onSessionDisconnected() {
+        gameOn = false;
         Log.i(LOGTAG, "session disconnected");
     }
 
@@ -442,7 +442,6 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
     public void queueCallback(QueueData queueData) {
         Log.d(TAG, "queueCallback: "+queueData.toString());
 
-
         SESSION_ID = queueData.getmSessionId();
         TOKEN = queueData.getmToken();
 
@@ -458,14 +457,22 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.d(TAG, "value listener, data change, "+dataSnapshot.getValue()+", "+dataSnapshot.getName());
 
-
                     if(dataSnapshot.getValue() == null) {
                         return;
                     }
 
                     String gamesUrl = (String)((Map)dataSnapshot.getValue()).get("url");
-                    //listenToGames(gamesUrl);
-                    mGamesUrl = gamesUrl;
+
+                    if(gamesUrl.contains("/games/")) {
+
+                        //listenToGames(gamesUrl);
+                        mGamesUrl = gamesUrl;
+
+                        if(!gameOn) {
+                            listenToGames(mGamesUrl);
+                            gameOn = true;
+                        }
+                    }
 
                 }
 
@@ -479,12 +486,11 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             String gamesUrl = queueData.getmFirebase();
             mGamesUrl = gamesUrl;
             listenToGames(gamesUrl);
-
         }
     }
 
 
-
+    boolean gameOn = false;
 
     @Override
     public void gamesCallback(String someHash) {
@@ -495,7 +501,15 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d(TAG, "games callback: "+dataSnapshot.getValue());
-                //int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
+
+                int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
+
+                if(winner == userMe) {
+                    // I win
+                }
+                else {
+                    // I lose
+                }
             }
 
             @Override
@@ -514,7 +528,10 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
     }
 
     public void listenToGames(String gamesUrl) {
-        if(gamesUrl == null) return;
+        if(gamesUrl == null) {
+            Log.d(TAG, "listenToGames is null.");
+            return;
+        }
         Log.d(TAG, "in listen to games for "+gamesUrl);
         String splits[] = gamesUrl.split("/");
         netApi.sendGame(splits[splits.length-1]);
