@@ -80,12 +80,14 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
     NetApi netApi;
 
+    private String userId = "8";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         netApi = new NetApi(this, "http://ec2-54-227-163-21.compute-1.amazonaws.com:3000");
-        netApi.getQueue("7", "yooo");
+        netApi.getQueue(userId, "yooo");
         
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -179,7 +181,11 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                         toast = Toast.makeText(getApplicationContext(), blinked + "", Toast.LENGTH_SHORT);
                         toast.show();
 
+                        String splits[] = mGamesUrl.split("/");
+                        String gamesHash = splits[splits.length-1];
 
+                        Log.d(TAG, "blinked: "+gamesHash+", "+userId);
+                        netApi.blink(gamesHash, userId);
                     }
 
                     b = null;
@@ -358,6 +364,8 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
     public void onSubscriberConnected(Subscriber subscriber) {
         Log.i(LOGTAG, "subscriber connected");
         view = true;
+
+        listenToGames(mGamesUrl);
     }
 
     boolean view = false;
@@ -428,12 +436,18 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         return (int) (screenDensity * (double) dp);
     }
 
+    String mGamesUrl;
+
     @Override
     public void queueCallback(QueueData queueData) {
         Log.d(TAG, "queueCallback: "+queueData.toString());
 
+
         SESSION_ID = queueData.getmSessionId();
         TOKEN = queueData.getmToken();
+
+        Log.d(TAG, "sess: "+SESSION_ID);
+        Log.d(TAG, "tok: "+TOKEN);
 
         if(queueData.getmStatus().equals("waiting")) {
             userMe = 1;
@@ -443,11 +457,14 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.d(TAG, "value listener, data change, "+dataSnapshot.getValue()+", "+dataSnapshot.getName());
+
+                    if(dataSnapshot.getValue() == null) {
+                        return;
+                    }
+
                     String gamesUrl = (String)((Map)dataSnapshot.getValue()).get("url");
-
-
-
-                    listenToGames(gamesUrl);
+                    //listenToGames(gamesUrl);
+                    mGamesUrl = gamesUrl;
                 }
 
                 @Override
@@ -458,7 +475,9 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         else {
             userMe = 2;
             String gamesUrl = queueData.getmFirebase();
+            mGamesUrl = gamesUrl;
             listenToGames(gamesUrl);
+
         }
     }
 
@@ -475,26 +494,28 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d(TAG, "games callback: "+dataSnapshot.getValue());
                 //int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
-
             }
 
             @Override
             public void onCancelled() {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
         });
     }
 
     @Override
     public void leaderboardCallback(List<NetApi.User> users) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void blink() {
+        this.finish();
     }
 
     public void listenToGames(String gamesUrl) {
+        if(gamesUrl == null) return;
         Log.d(TAG, "in listen to games for "+gamesUrl);
         String splits[] = gamesUrl.split("/");
         netApi.sendGame(splits[splits.length-1]);
-
 
         sessionConnect();
     }
