@@ -2,6 +2,7 @@ package com.opentok.android.demo.helloworld;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -40,6 +41,8 @@ import com.opentok.stat.SubscriberStatistics;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import android.provider.Settings.Secure;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -80,12 +83,17 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
 
     NetApi netApi;
 
+    private String userId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        userId = Secure.getString(this.getContentResolver(), Secure.ANDROID_ID);
+        if (userId == null) userId = "8";
+
         netApi = new NetApi(this, "http://ec2-54-227-163-21.compute-1.amazonaws.com:3000");
-        netApi.getQueue("7", "yooo");
+        netApi.getQueue(userId, "yooo");
         
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -171,15 +179,16 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                 @Override
                 public void callback(Bitmap b) {
                     //To change body of implemented methods use File | Settings | File Templates.
-                    if (toast != null) {
-                        toast.cancel();
-                    }
+
                     boolean blinked = !eyesFound(b);
-                    if (view && blinked) {
-                        toast = Toast.makeText(getApplicationContext(), blinked + "", Toast.LENGTH_SHORT);
-                        toast.show();
+                    if (view && blinked && !blinkedcalled) {
 
+                        blinkedcalled = true;
+                        String splits[] = mGamesUrl.split("/");
+                        String gamesHash = splits[splits.length-1];
 
+                        Log.d(TAG, "blinked: "+gamesHash+", "+userId);
+                        netApi.blink(gamesHash, userId);
                     }
 
                     b = null;
@@ -190,6 +199,8 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         }
 
     }
+
+    boolean blinkedcalled = false;
 
     private Toast toast;
 
@@ -358,12 +369,14 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
     public void onSubscriberConnected(Subscriber subscriber) {
         Log.i(LOGTAG, "subscriber connected");
         view = true;
+
     }
 
     boolean view = false;
 
     @Override
     public void onSessionDisconnected() {
+        gameOn = false;
         Log.i(LOGTAG, "session disconnected");
     }
 
@@ -428,12 +441,17 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         return (int) (screenDensity * (double) dp);
     }
 
+    String mGamesUrl;
+
     @Override
     public void queueCallback(QueueData queueData) {
         Log.d(TAG, "queueCallback: "+queueData.toString());
 
         SESSION_ID = queueData.getmSessionId();
         TOKEN = queueData.getmToken();
+
+        Log.d(TAG, "sess: "+SESSION_ID);
+        Log.d(TAG, "tok: "+TOKEN);
 
         if(queueData.getmStatus().equals("waiting")) {
             userMe = 1;
@@ -443,8 +461,24 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.d(TAG, "value listener, data change, "+dataSnapshot.getValue()+", "+dataSnapshot.getName());
+
+                    if(dataSnapshot.getValue() == null) {
+                        return;
+                    }
+
                     String gamesUrl = (String)((Map)dataSnapshot.getValue()).get("url");
-                    listenToGames(gamesUrl);
+
+                    if(gamesUrl.contains("/games/")) {
+
+                        //listenToGames(gamesUrl);
+                        mGamesUrl = gamesUrl;
+
+                        if(!gameOn) {
+                            listenToGames(mGamesUrl);
+                            gameOn = true;
+                        }
+                    }
+
                 }
 
                 @Override
@@ -455,12 +489,13 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         else {
             userMe = 2;
             String gamesUrl = queueData.getmFirebase();
+            mGamesUrl = gamesUrl;
             listenToGames(gamesUrl);
         }
     }
 
 
-
+    boolean gameOn = false;
 
     @Override
     public void gamesCallback(String someHash) {
@@ -471,27 +506,49 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d(TAG, "games callback: "+dataSnapshot.getValue());
-                //int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
 
+                int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
+
+                if(winner == userMe) {
+                    // I win
+                    Intent i = new Intent(HelloWorldActivity.this, GameOver.class);
+                    i.putExtra("didIWin", true);
+                    startActivity(i);
+                    finish();
+                }
+                else if (winner != 0){
+                    // I lose
+                    Intent i = new Intent(HelloWorldActivity.this, GameOver.class);
+                    i.putExtra("didIWin", false);
+                    startActivity(i);
+                    finish();
+                }
             }
 
             @Override
             public void onCancelled() {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
         });
     }
 
+
     @Override
     public void leaderboardCallback(List<NetApi.User> users) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void blink() {
+        this.finish();
     }
 
     public void listenToGames(String gamesUrl) {
+        if(gamesUrl == null) {
+            Log.d(TAG, "listenToGames is null.");
+            return;
+        }
         Log.d(TAG, "in listen to games for "+gamesUrl);
         String splits[] = gamesUrl.split("/");
         netApi.sendGame(splits[splits.length-1]);
-
 
         sessionConnect();
     }

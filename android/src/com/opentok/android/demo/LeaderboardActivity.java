@@ -48,4 +48,9 @@ public class LeaderboardActivity extends Activity implements  NetApiCallback
         listView1.setAdapter(adapter);
 
     }
+
+    @Override
+    public void blink() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
 }

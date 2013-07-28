@@ -61,6 +61,12 @@ public class NetApi {
         new RequestTask("leaderboard").execute(getUrl);
     }
 
+    public void blink(String game, String id) {
+
+        String getUrl = mUrl + "/blink?game="+game+"&id="+id;
+        new RequestTask("blink").execute(getUrl);
+    }
+
 
     class RequestTask extends AsyncTask<String, String, String> {
 
@@ -118,8 +124,8 @@ public class NetApi {
                 JSONObject jsonObject = new JSONObject(result);
                 return new QueueData(
                         jsonObject.getString("status"),
-                        jsonObject.getString("sessionId"),
                         jsonObject.getString("token"),
+                        jsonObject.getString("sessionId"),
                         jsonObject.getString("firebase")
                 );
             } catch (JSONException e) {

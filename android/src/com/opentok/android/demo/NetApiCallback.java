@@ -8,4 +8,6 @@ public interface NetApiCallback {
     public void gamesCallback(String someHash);
 
     public void leaderboardCallback(List<NetApi.User> users);
+
+    public void blink();
 }
