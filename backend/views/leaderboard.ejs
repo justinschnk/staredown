@@ -30,24 +30,16 @@
                     </tr>
                     </thead>
                     <tbody>
+
+                    <% for(var i = 0; i < Math.min(users.length, 10); i++){ %>
                     <tr>
-                        <td>1</td>
-                        <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
+                        <td class="text-center"><%= i + 1 %></td>
+                        <td><%= users[i].name %></td>
+                        <td class="time"><%= users[i].stareTime %></td>
+                        <td class="text-center"><%= users[i].wins %></td>
+                        <td class="text-center"><%= users[i].loses %></td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                    </tr>
+                    <% } %>
                     </tbody>
                 </table>
                 </p>
@@ -97,7 +89,28 @@
 -->
 
 <script>
+
+    function dhm(t){
+        var cd = 24 * 60 * 60 * 1000,
+                ch = 60 * 60 * 1000,
+                d = Math.floor(t / cd),
+                h = '0' + Math.floor( (t - d * cd) / ch),
+                m = '0' + Math.round( (t - d * cd - h * ch) / 60000);
+        return [d, h.substr(-2), m.substr(-2)].join(':');
+    }
+
     $(document).foundation();
+    $(document).ready(function(){
+       console.log('sup');
+       $('.time').each(function(index){
+
+
+           var t = $(this).html();
+           console.log(t);
+            var adj = dhm(t);
+            $(this).html(adj);
+        });
+    });
 </script>
 
 </body>
