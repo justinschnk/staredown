@@ -34,6 +34,11 @@ public class LeaderboardActivity extends Activity implements  NetApiCallback
     }
 
     @Override
+    public void gamesCallback(String someHash) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
     public void leaderboardCallback(List<NetApi.User> users) {
         UserAdapter adapter = new UserAdapter(this,
                 R.layout.list_item, users);

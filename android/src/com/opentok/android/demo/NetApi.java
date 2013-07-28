@@ -51,6 +51,11 @@ public class NetApi {
         new RequestTask("queue").execute(getUrl);
     }
 
+    public void sendGame(String someHash) {
+        String getUrl = mUrl + "/startgame?game="+someHash;
+        new RequestTask("games").execute(getUrl);
+    }
+
     public void getLeaderboard() {
         String getUrl = mUrl + "/leaderboard?json=true";
         new RequestTask("leaderboard").execute(getUrl);
@@ -60,6 +65,8 @@ public class NetApi {
     class RequestTask extends AsyncTask<String, String, String> {
 
         private String mEndpoint;
+
+        private String currentUri;
 
         public RequestTask(String endpoint) {
             mEndpoint = endpoint;
@@ -71,6 +78,7 @@ public class NetApi {
             HttpResponse response;
             String responseString = null;
             try {
+                currentUri = uri[0];
                 response = httpclient.execute(new HttpGet(uri[0]));
                 StatusLine statusLine = response.getStatusLine();
                 if(statusLine.getStatusCode() == HttpStatus.SC_OK){
@@ -98,6 +106,10 @@ public class NetApi {
                 mNetApiCallback.queueCallback(queueData);
             } else if (mEndpoint.equals("leaderboard")) {
                 mNetApiCallback.leaderboardCallback(getLeaderboard(result));
+            }
+            else if(mEndpoint.equals("games")) {
+                String splits[] = currentUri.split("/");
+                mNetApiCallback.gamesCallback(splits[splits.length-1].substring(15));
             }
         }
 

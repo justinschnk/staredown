@@ -21,6 +21,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+
+import java.util.Map;
+
 import java.util.List;
 
 /**
@@ -29,12 +32,13 @@ import java.util.List;
  * - a basic hello-world activity
  * - a basic hello-world activity with control bar with stream name and action buttons to switch camera and audio mute
  */
-public class MainActivity extends Activity implements NetApiCallback {
+public class MainActivity extends Activity {
 
     private static final String LOGTAG = "demo-opentok-sdk";
     private WakeLock wakeLock;
 
     private final String TAG = "MainActivity";
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +66,6 @@ public class MainActivity extends Activity implements NetApiCallback {
         // Disable screen dimming
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "Full Wake Lock");
-
-        NetApi netApi = new NetApi(this, "http://ec2-54-227-163-21.compute-1.amazonaws.com:3000");
-        netApi.getQueue("7", "yooo");
     }
 
     @Override
@@ -126,28 +127,4 @@ public class MainActivity extends Activity implements NetApiCallback {
         startActivity(intent);
     }
 
-    @Override
-    public void queueCallback(QueueData queueData) {
-        Log.d(TAG, "queueCallback: "+queueData.toString());
-
-        if(queueData.getmStatus().equals("waiting")) {
-            Firebase firebase = new Firebase(queueData.getmFirebase());
-            firebase.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    Log.d(TAG, "data change, "+dataSnapshot.getValue()+", "+dataSnapshot.getName());
-                }
-
-                @Override
-                public void onCancelled() {
-                    //To change body of implemented methods use File | Settings | File Templates.
-                }
-            });
-        }
-    }
-
-    @Override
-    public void leaderboardCallback(List<NetApi.User> users) {
-
-    }
 }

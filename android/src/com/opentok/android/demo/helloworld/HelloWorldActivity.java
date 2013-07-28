@@ -22,48 +22,53 @@ import android.widget.RelativeLayout;
 
 import android.widget.TextView;
 import android.widget.Toast;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.ValueEventListener;
 import com.opentok.android.OpentokException;
 import com.opentok.android.Publisher;
 import com.opentok.android.Session;
 import com.opentok.android.Stream;
 import com.opentok.android.Subscriber;
-import com.opentok.android.demo.EpicPublisher;
-import com.opentok.android.demo.EpicSubscriber;
-import com.opentok.android.demo.EpicVideoCaptureManager;
+import com.opentok.android.demo.*;
 import com.opentok.impl.SubscriberImpl;
 import com.opentok.media.AbstractCodec;
 import com.opentok.media.AndroidSurfaceRenderer;
 import com.opentok.media.avc.AvcDecoder;
 import com.opentok.rtp.codec.AvcDepacketizer;
-import com.opentok.android.demo.R;
 import com.opentok.stat.SubscriberStatistics;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This application demonstrates the basic workflow for getting started with the OpenTok Android SDK.
  * Basic hello-world activity shows publishing audio and video and subscribing to an audio and video stream
  */
-public class HelloWorldActivity extends Activity implements Publisher.Listener, Subscriber.Listener, Session.Listener {
+public class HelloWorldActivity extends Activity implements Publisher.Listener, Subscriber.Listener, Session.Listener, NetApiCallback{
 
     private static final String LOGTAG = "demo-hello-world";
     // automatically connect during Activity.onCreate
-    private static final boolean AUTO_CONNECT = true;
+    private static final boolean AUTO_CONNECT = false;
     // automatically publish during Session.Listener.onSessionConnected
     private static final boolean AUTO_PUBLISH = true;
     // automatically subscribe during Session.Listener.onSessionReceivedStream IFF stream is our own
     private static final boolean SUBSCRIBE_TO_SELF = false;
 
+    private static final String TAG = "HelloWorldActivity";
+
+    private int userMe = 0;
 
     ImageView iv;
 
     /* Fill the following variables using your own Project info from the Dashboard */
     // Replace with your generated Session ID
-    private static final String SESSION_ID = "1_MX4zNjUwMjIxMn4xMjcuMC4wLjF-U2F0IEp1bCAyNyAxMzo0OTo0OSBQRFQgMjAxM34wLjI5NjM1OTN-";
+    private static String SESSION_ID = "1_MX4zNjUwMjIxMn4xMjcuMC4wLjF-U2F0IEp1bCAyNyAxMzo0OTo0OSBQRFQgMjAxM34wLjI5NjM1OTN-";
     // Replace with your generated Token (use Project Tools or from a server-side library)
-    private static final String TOKEN = "T1==cGFydG5lcl9pZD0zNjUwMjIxMiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz0xZDM2M2M5NTcwNDNlMmE0ZWJlZjQ5M2RhN2ViYzAyZTYyNzM0MzBmOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDR6TmpVd01qSXhNbjR4TWpjdU1DNHdMakYtVTJGMElFcDFiQ0F5TnlBeE16bzBPVG8wT1NCUVJGUWdNakF4TTM0d0xqSTVOak0xT1ROLSZjcmVhdGVfdGltZT0xMzc0OTU4MjE4Jm5vbmNlPTAuNDIzNjEzMjE1MTA1MDcxOSZleHBpcmVfdGltZT0xMzc1MDQ0NjE4JmNvbm5lY3Rpb25fZGF0YT0=";
+    private static String TOKEN = "T1==cGFydG5lcl9pZD0zNjUwMjIxMiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz0xZDM2M2M5NTcwNDNlMmE0ZWJlZjQ5M2RhN2ViYzAyZTYyNzM0MzBmOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDR6TmpVd01qSXhNbjR4TWpjdU1DNHdMakYtVTJGMElFcDFiQ0F5TnlBeE16bzBPVG8wT1NCUVJGUWdNakF4TTM0d0xqSTVOak0xT1ROLSZjcmVhdGVfdGltZT0xMzc0OTU4MjE4Jm5vbmNlPTAuNDIzNjEzMjE1MTA1MDcxOSZleHBpcmVfdGltZT0xMzc1MDQ0NjE4JmNvbm5lY3Rpb25fZGF0YT0=";
     private RelativeLayout publisherViewContainer;
     private RelativeLayout subscriberViewContainer;
     private Publisher publisher;
@@ -72,9 +77,15 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
     private WakeLock wakeLock;
     private TextView tv;
 
+
+    NetApi netApi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        netApi = new NetApi(this, "http://ec2-54-227-163-21.compute-1.amazonaws.com:3000");
+        netApi.getQueue("7", "yooo");
         
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -167,6 +178,8 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
                     if (view && blinked) {
                         toast = Toast.makeText(getApplicationContext(), blinked + "", Toast.LENGTH_SHORT);
                         toast.show();
+
+
                     }
 
                     b = null;
@@ -186,7 +199,7 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         int width = b.getWidth();
         int height = b.getHeight();
 
-        Log.d(LOGTAG, "finding eyes... "+b.getConfig()+", "+width+"x"+height);
+        // Log.d(LOGTAG, "finding eyes... "+b.getConfig()+", "+width+"x"+height);
 
         FaceDetector faceDetector = new FaceDetector(width, height, 1);
         FaceDetector.Face[] faces = new FaceDetector.Face[1];
@@ -224,7 +237,6 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
             int avg = (int) (0.2125* Color.red(pix) + 0.7154*Color.green(pix) + 0.0721*Color.blue(pix));
             pixels[i] = Color.argb(Color.alpha(pix), avg, avg, avg);
 
-            int sumColors = Color.red(pixels[i]) + Color.green(pixels[i]) + Color.blue(pixels[i]);
 
             int threshold = 255;
             if (avg < 200) {
@@ -237,71 +249,35 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         }
         //b.setPixels(pixels, 0, eyeWidth, startEyeX, startEyeY, eyeWidth, eyeHeight);
 
-        // right eye
-        startEyeX = rightX - eyeWidth/2;
-        startEyeY = rightY - eyeHeight/2;
 
-        b.getPixels(pixels, 0, eyeWidth, startEyeX, startEyeY, eyeWidth, eyeHeight);
-
-        int rightEyeColCount = 0;
-        for (int i = 0; i < pixels.length; i++) {
-            pixels[i] ^= RGB_MASK;
-
-            int pix = pixels[i];
-            int avg = (int) (0.2125* Color.red(pix) + 0.7154*Color.green(pix) + 0.0721*Color.blue(pix));
-            pixels[i] = Color.argb(Color.alpha(pix), avg, avg, avg);
-
-            int sumColors = Color.red(pixels[i]) + Color.green(pixels[i]) + Color.blue(pixels[i]);
-
-            int threshold = 255;
-            if (avg < 200) {
-                threshold = 0;
-            } else {
-                rightEyeColCount++;
-            }
-            pixels[i] = Color.argb(255, threshold, threshold, threshold);
-
-        }
         //b.setPixels(pixels, 0, eyeWidth, startEyeX, startEyeY, eyeWidth, eyeHeight);
         // --
 
         double leftEyeRatio = leftEyeColCount/(eyeWidth*eyeHeight+0.0);
-        double rightEyeRatio = rightEyeColCount/(eyeWidth*eyeHeight+0.0);
 
-        if(avgLeftQueue.size() == 0) {
-            for(int i=0; i<25; i++) avgLeftQueue.add(leftEyeRatio);
-        }
-
-        double avgLeft = 0;
-        for(int i=0; i<avgLeftQueue.size(); i++) {
-            avgLeft += avgLeftQueue.get(i);
-        }
-        avgLeft /= avgLeftQueue.size();
-
-        Log.d(LOGTAG, "avgLeft: "+avgLeft);
-
-        if (leftEyeRatio < avgLeft*0.6666) {
-            // blinked
-            Log.d(LOGTAG, "blinked, leftEyeRatio was just "+leftEyeRatio);
-            return false;
-        }
-        else {
-            avgLeftQueue.remove(0);
+        if(avgLeftQueue.size() < 25) {
             avgLeftQueue.add(leftEyeRatio);
             return true;
+        } else {
+            double avgLeft = 0;
+            for(int i=0; i<avgLeftQueue.size(); i++) {
+                avgLeft += avgLeftQueue.get(i);
+            }
+            avgLeft /= avgLeftQueue.size();
+
+            Log.d(LOGTAG, "avgLeft: "+avgLeft);
+
+            if (leftEyeRatio < avgLeft*0.6666) {
+                // blinked
+                Log.d(LOGTAG, "blinked, leftEyeRatio was just "+leftEyeRatio);
+                return false;
+            }
+            else {
+                avgLeftQueue.remove(0);
+                avgLeftQueue.add(leftEyeRatio);
+                return true;
+            }
         }
-
-
-
-//        Log.d(LOGTAG, "leftEyeColCount ratio: "+leftEyeColCount/(eyeWidth*eyeHeight+0.0)+", rightEyeColCount ratio: "+rightEyeColCount/(eyeWidth*eyeHeight+0.0));
-//        if (leftEyeColCount > 0.09) {
-//            // left eye is open
-//            return true;
-//        }
-//        if (rightEyeRatio > 0.09) {
-//            // right eye is open
-//            return true;
-//        }
 
     }
 
@@ -451,4 +427,74 @@ public class HelloWorldActivity extends Activity implements Publisher.Listener, 
         double screenDensity = this.getResources().getDisplayMetrics().density;
         return (int) (screenDensity * (double) dp);
     }
+
+    @Override
+    public void queueCallback(QueueData queueData) {
+        Log.d(TAG, "queueCallback: "+queueData.toString());
+
+        SESSION_ID = queueData.getmSessionId();
+        TOKEN = queueData.getmToken();
+
+        if(queueData.getmStatus().equals("waiting")) {
+            userMe = 1;
+            Firebase firebase = new Firebase(queueData.getmFirebase());
+
+            firebase.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.d(TAG, "value listener, data change, "+dataSnapshot.getValue()+", "+dataSnapshot.getName());
+                    String gamesUrl = (String)((Map)dataSnapshot.getValue()).get("url");
+                    listenToGames(gamesUrl);
+                }
+
+                @Override
+                public void onCancelled() {
+                }
+            });
+        }
+        else {
+            userMe = 2;
+            String gamesUrl = queueData.getmFirebase();
+            listenToGames(gamesUrl);
+        }
+    }
+
+
+
+
+    @Override
+    public void gamesCallback(String someHash) {
+        Log.d(TAG, "im games callback "+someHash);
+        String firebaseUrl = "https://staredown.firebaseio.com/games/" + someHash;
+        Firebase firebase = new Firebase(firebaseUrl);
+        firebase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Log.d(TAG, "games callback: "+dataSnapshot.getValue());
+                //int winner = (Integer)((Map)dataSnapshot.getValue()).get("winner");
+
+            }
+
+            @Override
+            public void onCancelled() {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+        });
+    }
+
+    @Override
+    public void leaderboardCallback(List<NetApi.User> users) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public void listenToGames(String gamesUrl) {
+        Log.d(TAG, "in listen to games for "+gamesUrl);
+        String splits[] = gamesUrl.split("/");
+        netApi.sendGame(splits[splits.length-1]);
+
+
+        sessionConnect();
+    }
+
+
 }
