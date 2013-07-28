@@ -71,7 +71,7 @@ exports.queue = function(req, res){
 
     var oldQueueRef = new Firebase(qURL);
     oldQueueRef.update({firebase: newGame.toString()}, function(){
-      queueRef.remove();
+      setInterval(function(){queueRef.remove();}, 1000);
     });
 
     res.send(JSON.stringify({status: 'connected', sessionId: qSession, token: user2Token, firebase: newGame.toString()}));
